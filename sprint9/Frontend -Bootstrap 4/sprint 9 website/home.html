@@ -1,0 +1,537 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Labradoodle</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font: 400 15px Lato, sans-serif;
+            line-height: 1.8;
+            color: #000000;
+        }
+
+        h2 {
+            font-size: 24px;
+            text-transform: uppercase;
+            color: #000000;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            color: #000000;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+
+        .jumbotron {
+            background-color: #c2a35f;
+            color: #fff;
+            padding: 100px 25px;
+            font-family: Montserrat, sans-serif;
+        }
+
+        .container-fluid {
+            padding: 60px 50px;
+        }
+
+        .bg-grey {
+            background-color: #c2a35f;
+        }
+
+        .carousel-control.right, .carousel-control.left {
+            background-image: none;
+            color: #b23434;
+        }
+
+        .carousel-indicators li {
+            border-color: #000000;
+        }
+
+            .carousel-indicators li.active {
+                background-color: #883e34;
+            }
+
+        .item h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            font-weight: 400;
+            font-style: italic;
+            margin: 70px 0;
+        }
+
+        .item span {
+            font-style: normal;
+        }
+
+        .panel {
+            border: 1px solid #f4511e;
+            border-radius: 0 !important;
+            transition: box-shadow 0.5s;
+        }
+
+            .panel:hover {
+                box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+            }
+
+        .panel-footer .btn:hover {
+            border: 1px solid #f4511e;
+            background-color: #00ffff !important;
+            color: #00ffff;
+        }
+
+        .panel-heading {
+            color: #000000 !important;
+            background-color: #c2a35f !important;
+            padding: 25px;
+            border-bottom: 1px solid transparent;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+
+        .panel-footer {
+            background-color: white !important;
+        }
+
+            .panel-footer h3 {
+                font-size: 32px;
+            }
+
+            .panel-footer h4 {
+                color: #000000;
+                font-size: 14px;
+            }
+
+            .panel-footer .btn {
+                margin: 15px 0;
+                background-color: #c2a35f;
+                color: #000;
+            }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #b23434;
+            z-index: 9999;
+            border: 0;
+            font-size: 12px !important;
+            line-height: 1.42857143 !important;
+            letter-spacing: 3px;
+            border-radius: 0;
+            font-family: Montserrat, sans-serif;
+        }
+
+            .navbar li a, .navbar .navbar-brand {
+                color: #fff !important;
+            }
+
+        .navbar-nav li a:hover, .navbar-nav li.active a {
+            color: #f4514e !important;
+            background-color: #fff !important;
+        }
+
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+            color: #fff !important;
+        }
+
+        footer .glyphicon {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #952828;
+        }
+
+        .slideanim {
+            visibility: hidden;
+        }
+
+        .slide {
+            animation-name: slide;
+            -webkit-animation-name: slide;
+            animation-duration: 1s;
+            -webkit-animation-duration: 1s;
+            visibility: visible;
+        }
+
+        @keyframes slide {
+            0% {
+                opacity: 0;
+                transform: translateY(70%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+
+        @-webkit-keyframes slide {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(70%);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0%);
+            }
+        }
+    </style>
+
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#uiterlijk">UITERLIJK</a></li>
+                    <li><a href="#oorsprong">OORSPRONG</a></li>
+                    <li><a href="#gezondheid">GEZONDHEID</a></li>
+                    <li><a href="#omgang">OMGANG</a></li>
+                    <li><a href="#controverse">CONTROVERSE</a></li>
+                    <li><a href="#fotogalerie">FOTOGALERIE</a></li>
+                    <li><a href="#tabel">TABEL</a></li>
+                    <li><a href="#contact">CONTACT FORMULIER</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="jumbotron text-center">
+        <h1>Labradoodle</h1><!--H1 zorgt ervoor dat de tekst groter word bijvoorbeeld voor titels hoe kleiner de nummer de groter de tekst-->
+        <p>Dit is onze website van Bootstrap</p>
+    </div>
+
+    <div id="uiterlijk" class="container-fluid text-center">
+        <div class="row">
+            <div class="col-sm-2">
+                <!--dit zorgt ervoor dat het mooi in een rij zit -->
+                <img src="img/bruin.jpg" class="img-fluid" alt="Responsive image"><!--dit voegt in foto toe-->
+                <img src="img/blond.jpg" class="img-fluid" alt="Responsive image">
+            </div>
+            <div class="col-sm-8">
+                <h2>Uiterlijk</h2><br><!--dit is de teskt van het eerste gedeelte-->
+                <h4>
+                    De hond is middelgroot tot groot en houdt qua uiterlijk het midden tussen de gebruikte oorspronkelijke twee rassen.
+                    <h3>Vacht</h3>
+                    Hij komt voor in verschillende kleurvariëteiten zoals wit, rood, bruin, zwart, zilver-, karamel- en goudkleurig. Ook de textuur van de vacht kan sterk verschillen. Sommige labradoodles hebben bijvoorbeeld krullen, terwijl andere lange sluikharen hebben, of kortharig zijn.
+                    <h3>Hoofd</h3>
+                    Het hoofd is breed met welgevormde wenkbrauwen. De snuit is korter dan de hersenschedel.
+                    <h3>Grootte</h3>
+                    Labradoodles kunnen zeer verschillende afmetingen hebben omdat er nog geen uniformiteit van fokpraktijk en consensus over fokrichting bestaat.
+                    De schofthoogte van een labradoodle kan sterk variëren van hond tot hond, maar over het algemeen is de hond ergens tussen de 60cm en 65cm hoog. Een volwassen reu kan ergens tussen de 25kg en de 35kg wegen, en een teef tussen de 20kg en de 27kg.
+                    <h3>Hoofd</h3>
+                    Het hoofd is breed met welgevormde wenkbrauwen. De snuit is korter dan de hersenschedel.
+                    <h3> Ogen</h3>
+                    De labradoodle heeft grote, levendige, ovale ogen.
+                    <h3>Staart</h3>
+                    De staartaanzet begint vrij laag. De staart zelf wordt vaak krom omhoog gedragen.
+                    <h3> Aard</h3>
+                    De labradoodle is een hond met een vrolijk karakter en met een enorme "will to please". Ze kunnen de emoties van hun baas goed aanvoelen, een kwaliteit dat hun erg geschikt maakt als therapiehond.
+
+                </h4><br>
+
+
+            </div>
+            <div class="col-sm-2">
+                <img src="img/peper_en_zout.jpg" class="img-fluid" alt="Responsive image">
+                <img src="img/zwart.jpg" class="img-fluid" alt="Responsive image">
+            </div>
+        </div>
+    </div>
+
+
+    <div id="oorsprong" class="container-fluid text-center bg-grey">
+        <h2>oorsprong</h2><!--dit is de teskt van het tweede gedeelte-->
+        <h3>Gebruiksdoel</h3>
+        <h4>De labradoodle werd oorspronkelijk gefokt om te dienen als hypoallergene assistentiehond. </h4>
+        <h3>Geschiedenis</h3>
+        <h4>
+            De Australiër Wally Conron is de geestelijke vader van de labradoodle, hoewel hij in recente interviews aangeeft daar niet meer zo trots op te zijn.
+            Conron, een fokker van de Royal Victorian Guide Dogs Association, kruiste voor het eerst een poedel met een labrador in 1989. Zijn doel was om de een hond te creëren die de vachtstructuur heeft van een poedel en de "will to please" van de labrador retriever. Het was ook Conron die de naam labradoodle bedacht heeft.
+            De inspiratie voor deze kruising kwam van een Hawaiäans koppel die Wally Conron eind jaren '80 hebben gevraagd om voor hun een hulphond te fokken die bij hun zouden passen. De vrouw van het koppel was namelijk slechtziend en had een blindengeleidehond nodig, maar haar echtgenoot was allergisch aan de meeste honden.
+        </h4>
+        <br>
+    </div>
+
+
+    <div id="gezondheid" class="container-fluid text-center">
+        <h2>gezondheid</h2><br><!--dit is de teskt van het derde gedeelte-->
+        <h3>Meest voorkomende gezondheidsproblemen</h3><br>
+        <h4>Aangezien de labradoodle geen echt hondenras is, is het moeilijk te voorspellen welke gezondheidsproblemen er kunnen opduiken bij deze honden. Bij rashonden kan men dit meestal nagaan via de stamboom en de bloedlijnen. Dit is meestal niet mogelijk bij de labradoodle, daarom wordt er meestal vanuit gegaan dat deze honden dezelfde ziektes en gebreken kunnen hebben van zowel de poedel alsook de labrador retriever. </h4><br>
+        <h3>Levensverwachting</h3>
+        <h4>Een gezonde labradoodle wordt ongeveer 14 jaar oud.</h4>
+    </div>
+
+    <!-- Charbel Elkhoury -->
+    <div id="omgang" class="container-fluid text-center bg-grey">
+        <div class="text-center">
+            <h2>omgang</h2><!--dit is de teskt van het vierde gedeelte-->
+            <h3>Verzorging</h3>
+            <h4>De vacht van de labradoodle vraagt enige tijd en aandacht, ongeacht of de hond krullen heeft of niet. Het wordt aangeraden de vacht wekelijks tot dagelijks te borstelen, afhankelijk van de lengte en de textuur. Hierbij besteedt men best extra aandacht aan de plaatsen op het lichaam waar er veel wrijving is zoals: de oksels, de lies en achter de oren. Op deze plaatsen ontstaan gemakkelijk klitten in het haar. Net zoals bij de poedel kan het zijn dat de vacht van deze hond onophoudelijk blijft groeien. Daarom gaan vele labradoodles ook om de 8 à 12 weken naar een hondenkapsalon om de vacht bij te knippen. Sommige eigenaars opteren om de vacht te laten afscheren door de trimmer, terwijl andere liever een mooi kapsel laten knippen. Sommige labradoodles mogen echter niet geschoren worden omdat hun vachtstructuur dat niet toelaat. Men vraagt dus best eerst advies aan de hondentrimmer vooraleer men een beslissing neemt over wat te doen met de vacht.</h4>
+            <h3>Opvoeding</h3>
+            <h4>In het algemeen is de labradoodle een erg aangename huishond die erg intelligent is met een enorme "will to please". Door zijn intelligentie is deze kruising makkelijk te trainen, maar heeft deze ook een consequente opvoeding nodig anders kan het een vervelende hond worden.</h4>
+            <h3>Activiteiten</h3>
+            <h4>
+                Zoals al eerder vermeld zijn labradoodles erg energieke, intelligente en veelzijdige honden. Dit maakt hun erg geschikt voor de volgende activiteiten:<br />
+                •	Agility<br />
+                •	Dock diving<br />
+                •	Dogdance<br />
+                •	Frisbee<br />
+                •	Gehoorzaamheid<br />
+                •	Zwemmen
+            </h4>
+        </div>
+    </div>
+
+    <div id="controverse" class="container-fluid text-center">
+        <div class="text-center">
+            <h2>Controverse</h2><br><!--dit is de teskt van het vijfde gedeelte-->
+            <h3>Hypoallergeen</h3>
+            <h4>De labradoodle heeft zijn populariteit mede te danken aan dat deze kruising geadverteerd wordt als een hypoallergene hond en dus ideaal is voor mensen die normaal allergisch zijn aan honden. Hier bestaat in de kynologie echter veel onenigheid over of dit wel klopt. Allergenen, zoals eiwitten uit de vacht, huidschilfers en speeksel, veroorzaken na inademing allergische klachten. Het idee is dat honden zoals labradoodles minder of geen allergenen uitscheiden</h4>
+        </div>
+    </div>
+
+
+    <div id="fotogalerie" class="container-fluid bg-grey">
+        <div class="row">
+            <div class="col-sm-6">
+                <!--dit is de fotogalerie-->
+                dit is een labradoodle met een cream vacht:
+                <img src="img/zesde.png" class="img-fluid" alt="Responsive image">
+                <br /> dit is een labradoodle met een caramel vacht:
+                <img src="img/vijfde.png" class="img-fluid" alt="Responsive image">
+            </div> <div class="col-sm-6">
+                dit is een labradoodle met een apricot vacht:
+                <img src="img/seven.png" class="img-fluid" alt="Responsive image">
+                <br />dit is een labradoodle met een chocolade vacht:
+                <img src="img/acht.png" class="img-fluid" alt="Responsive image">
+            </div>
+        </div>
+    </div>
+
+
+    <div id="tabel" class="container-fluid text-center">
+        <div class="row">
+            <!--dit is het tabel van je labradoodle-->
+            <div class="col-sm-8">
+                <h2>tabel</h2><br>
+                <br />
+                Verschillen ''gewone'' en de Australian labradoodle<br />
+                Wij geven u hier het officiële fokschema van de Australian labradoodle en geven u aan waar de ''gewone'' labradoodle stopt en de Australian labradoodle verder gaat in ontwikkeling. De eerste keer dat u dit leest zal het wellicht duizelen vanwege de verschillende coderingen, de 2e keer zal het al snel duidelijk worden dat de verschillen tussen de labradoodles groot zijn. Het is een technisch verhaal maar geheel conform de richtlijnen van de Australian Labradoodle Association.<br />
+                <br /><br />
+                Definities<br /><br />
+                AL	Australian Labradoodle<br />
+                ALF	Australian Labradoodle Foundation Dog  -> soort voorloper<br />
+                ALF0       	Australian Labradoodle basis fokhonden<br />
+                LO	Kruising Labrador x Poedel   (ook wel aangeduid als F1/F1B/F2 labradoodle)<br />
+                S	Kruising Cocker Spaniel x Poedel (ook wel Spoodle genoemd)<br />
+                <br />
+                Basishonden:<br />
+                L          	Labrador<br />
+                P	Poedel<br />
+                C	Cocker Spaniel<br />
+                ALF1      =             Eerste generatie labradoodle<br />
+                <br />
+                Nu we de codes kennen kunnen we gaan kruisen. Vanzelfsprekend zijn hier regels voor opgesteld. Wij zullen deze hier bespreken en toelichten:
+                <br /><br />
+
+
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">hond 1</th>
+                            <th scope="col">hond 2</th>
+                            <th scope="col">kind</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>LO1</td>
+                            <td>LO1</td>
+                            <td>LO2</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>LO2</td>
+                            <td>LO2</td>
+                            <td>LO3</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>LO1</td>
+                            <td>Poedel</td>
+                            <td>LO2</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>LO1</td>
+                            <td>LO1</td>
+                            <td>LO2</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">hond 1</th>
+                            <th scope="col">hond 2</th>
+                            <th scope="col">kind</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>ALF1</td>
+                            <td>ALF1</td>
+                            <td>ALF2</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>ALF2</td>
+                            <td>ALF2</td>
+                            <td>ALF3</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>ALF3</td>
+                            <td>ALF3</td>
+                            <td>Pure AL</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">hond 1</th>
+                            <th scope="col">hond 2</th>
+                            <th scope="col">kind</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>LO1</td>
+                            <td>ALF3</td>
+                            <td>ALF1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>LO2</td>
+                            <td>ALF2</td>
+                            <td>ALF1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>LO2p</td>
+                            <td>C</td>
+                            <td>ALF1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>LO2</td>
+                            <td>S</td>
+                            <td>ALF1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!--dit is het contactformulier-->
+    <div id="contact" class="container-fluid bg-grey">
+        <h2 class="text-center">Contact formulier</h2>
+        <div class="row">
+            <div class="col-sm-12 slideanim">
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="name" name="voornaam" placeholder="voornaam" type="text" required>
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="name" name="achternaam" placeholder="achternaam" type="text" required>
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="name" name="tussenvoegsel" placeholder="tussenvoegsel" type="text" required>
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="name" name="Straatnaam" placeholder="straatnaam" type="text" required>
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="name" name="huinummer" placeholder="huisnummer" type="text" required>
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="name" name="woonplaats" placeholder="woonplaats" type="text" required>
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="name" name="telefoonnumer" placeholder="telefoonnummer" type="text" required>
+                    </div>
+                </div>
+                <textarea class="form-control" id="comments" name="comments" placeholder="Bericht/ vraag" rows="5"></textarea><br>
+                <div class="row">
+                    <div class="col-sm-12 form-group">
+                        <button class="btn btn-default pull-right" type="submit">verstuur</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid text-center">
+        <a href="#myPage" title="To Top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+
+                    var hash = this.hash;
+
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
+
+                        window.location.hash = hash;
+                    });
+                }
+            });
+
+            $(window).scroll(function () {
+                $(".slideanim").each(function () {
+                    var pos = $(this).offset().top;
+
+                    var winTop = $(window).scrollTop();
+                    if (pos < winTop + 600) {
+                        $(this).addClass("slide");
+                    }
+                });
+            });
+        })
+    </script>
+
+</body>
+</html>
