@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="nl">
+<head>
+    <meta http-equiv="content-type"
+          content="text/html;
+          charset=UTF-8">
+    <title>Yahtzee</title>
+<body>
+
+
+<h2>Klik om 5 dobbelstenen te gooien</h2>
+
+<button onClick="myFunction()">Dobbelen</button><!--laat de function myFunction uitvoeren-->
+
+<script>
+    function myFunction() {
+        var dice = new Array;
+        dice[0] = Math.floor((Math.random() * 6) + 1);//geeft de eerste dobbelsteen een getal tussen 1 en 6
+        dice[1] = Math.floor((Math.random() * 6) + 1);//geeft de eerste dobbelsteen een getal tussen 1 en 6
+        dice[2] = Math.floor((Math.random() * 6) + 1);//geeft de eerste dobbelsteen een getal tussen 1 en 6
+        dice[3] = Math.floor((Math.random() * 6) + 1);//geeft de eerste dobbelsteen een getal tussen 1 en 6
+        dice[4] = Math.floor((Math.random() * 6) + 1);//geeft de eerste dobbelsteen een getal tussen 1 en 6
+        document.write("Dobbel 1",dice[0] + ' "Dobbel 2",' + dice[1] + '"Dobbel 3",' + dice[2] + '"Dobbel 4",' + dice[3] + '"Dobbel 5",' + dice[4] + '' + "</br>")//laat zien welke je hebt gegooid
+        document.write(parseInt(dice[0]) + parseInt(dice[1]) + parseInt(dice[2]) + parseInt(dice[3]) + parseInt(dice[4]))//berkend en laat zien hoeveel je hebt gegooid
+    }
+</script>
+</body>
+</html>
